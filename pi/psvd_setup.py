@@ -3,7 +3,7 @@
 Tkinter GUI for PSVD setup.
 
 Allows the user to perform all setup tasks including: mark parking spaces, set
-control points and register the car park with the server. The main PSVD
+control points and register the parking lot with the server. The main PSVD
 program can be invoked from the menu.
 
 """
@@ -575,7 +575,7 @@ class Application(tk.Frame):
             main.main()
     
     def clickRegister(self):
-        """Register the car park with the server. """
+        """Register the parking lot with the server. """
         if self.__is_verbose: print "ACTION: Clicked 'Register'"
         
         # turn off toggle buttons
@@ -739,7 +739,7 @@ class Application(tk.Frame):
         self.start_button.grid(row = 0, column = 0,
             sticky = tk.W + tk.E + tk.N + tk.S)
         
-        # register the car park button
+        # register the parking lot button
         self.register_button = tk.Button(self, text = "Register",
             command = self.clickRegister, padx = PADDING)
         self.register_button.grid(row = 1, column = 0,

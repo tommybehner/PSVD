@@ -159,7 +159,7 @@ class MainApplication(tk.Frame):
     # --------------------------------------------------------------------------
     def __createWidgets(self):
         """Create the widgets. """
-        if self.__is_verbose: print "INFO: Creating Widgets!"
+        if self.__is_verbose: print "INFO: Creating Widgets..."
         
         # create show preview button
         self.preview_button = tk.Button(self, text = "Show Camera Feed",
@@ -396,7 +396,7 @@ def run():
             if num_controls >= 2: is_occupied = True
             
             if s.IS_VERBOSE and is_occupied:
-                print "=> Space", i[0], "is filled.\n"
+                print "=> Space", i[0], "is occupied.\n"
             elif s.IS_VERBOSE and not is_occupied:
                 print "=> Space", i[0], "is empty.\n"
             
@@ -433,7 +433,7 @@ def run():
 #  Main
 # -----------------------------------------------------------------------------
 def main():
-    """Start PSVD application and Smart Parking System loop. """
+    """Start PSVD application loop. """
     
     # use global variables
     global has_quit

@@ -1,11 +1,7 @@
 <?php
 
-/**
- * Main page for car parking website.
- *
- * @author	Humphrey Shotton
- * @version	1.1 (2014-03-21)
- */
+// Main page for parking website.
+
 
 require_once ('init.php');
 require_once ('includes/header.php');
@@ -30,18 +26,18 @@ require_once ('includes/header.php');
 	</div>
 
 	<?php
-	$stmt = DB::get()->prepare('SELECT *, (SELECT count(*) FROM spaces WHERE space_park_id = p.park_id) AS ps, 
-				('.get_num_space_query("p.park_id").') AS spaces FROM parks p');
+	$stmt = DB::get()->prepare('SELECT *, (SELECT count(*) FROM spaces WHERE space_lot_id = p.lot_id) AS ps, 
+				('.get_num_space_query("p.lot_id").') AS spaces FROM lots p');
 	$stmt->execute();
 	$res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	foreach ($res as $row){	?>
-		<a class="row" href="<?php echo Conf::URL_BASE; ?>spaces.php?id=<?php echo $row['park_id']; ?>">
+		<a class="row" href="<?php echo Conf::URL_BASE; ?>spaces.php?id=<?php echo $row['lot_id']; ?>">
 			<div class="col-sm-3 col-xs-4">
-				<?php echo $row['park_name']; ?>
+				<?php echo $row['lot_name']; ?>
 			</div>
 			<div class="col-sm-4 col-xs-5">
-				<?php echo $row['park_desc']; ?>
+				<?php echo $row['lot_desc']; ?>
 			</div>
 			<div class="col-sm-2 col-xs-3">
 				<?php echo $row['ps'] - $row['spaces']; ?> spaces <span class="small" style="color:gray;">/ <?php echo $row['ps']; ?></span>

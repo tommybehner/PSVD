@@ -1,21 +1,21 @@
 
-CREATE TABLE parks (
-	park_id SERIAL,
-	park_name VARCHAR(20) NOT NULL UNIQUE,
-	park_desc TEXT NULL,
-	park_updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	park_location TEXT NULL DEFAULT NULL
+CREATE TABLE lots (
+	lot_id SERIAL,
+	lot_name VARCHAR(20) NOT NULL UNIQUE,
+	lot_desc TEXT NULL,
+	lot_updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	lot_location TEXT NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE spaces (
 	space_id SERIAL,
-	space_park_id BIGINT UNSIGNED,
+	space_lot_id BIGINT UNSIGNED,
 	space_pi_id BIGINT NOT NULL,
 	space_area_code INT NOT NULL,
 	space_status_id INT NOT NULL DEFAULT 0,
 	space_time_added TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	
-	FOREIGN KEY ( space_park_id ) REFERENCES parks ( park_id )
+	FOREIGN KEY ( space_lot_id ) REFERENCES lots ( lot_id )
 		ON DELETE SET NULL
 		ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

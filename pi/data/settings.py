@@ -34,8 +34,8 @@ IS_VERBOSE = True
 
 PARK_ID = 1
 
-SERVER_PASS = ""
+SERVER_PASS = "psvd4LYFE"
 
-SERVER_URL = ""
+SERVER_URL = "capstone2.cs.kent.edu"
 
 

@@ -55,7 +55,7 @@ def send_update(area_id, status_code):
     """
     # Create the post data
     vals = {"update_password" : s.SERVER_PASS,
-            "update_park_id" : s.PARK_ID,
+            "update_lot_id" : s.LOT_ID,
             "update_pi_id" : s.PI_ID,
             "update_area_id" : area_id,
             "update_status" : status_code}
@@ -76,7 +76,7 @@ def register_area(area_id):
     """
     # Create the post data
     vals = {"register_password" : s.SERVER_PASS,
-            "register_park_id" : s.PARK_ID,
+            "register_lot_id" : s.LOT_ID,
             "register_pi_id" : s.PI_ID,
             "register_area_id" : area_id}
 

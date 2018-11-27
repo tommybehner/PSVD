@@ -480,7 +480,7 @@ class Application(tk.Frame):
             
         # do nothing -- ignore LMB clicks
         else:
-            if self.__is_verbose: print "INFO: Just clicking LMB merrily =D"
+            if self.__is_verbose: print "INFO: Left mouse button click"
 
         # return focus to the main frame for key-press events
         self.focus_set()
@@ -510,7 +510,7 @@ class Application(tk.Frame):
             self.__parking_spaces.boxes[self.__parking_spaces.getCurrentBox()].deleteRectangle(self.display)
             
         else:
-            if self.__is_verbose: print "INFO: Just clicking RMB merrily =)"
+            if self.__is_verbose: print "INFO: Right mouse button click"
         
         # return focus to the main frame for key-press events
         self.focus_set()

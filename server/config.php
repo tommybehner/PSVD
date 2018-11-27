@@ -1,11 +1,7 @@
 <?php
 
-/**
- * Class for storing global variables.
- *
- * @author	Humphrey Shotton
- * @version	1.1 (2014-03-21)
- */
+// Class for storing global variables.
+
 
 class Conf{
 	// MySQL Database Settings.

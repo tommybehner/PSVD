@@ -1,11 +1,7 @@
 <?php
 
-/** 
- * File for recieving the data from the pi's via a HTTP request.
- * 
- * @author	Humphrey Shotton
- * @version	1.0 (2014-01-16)
- */
+// File for recieving the data from the pi's via a HTTP request.
+
  
 require_once( 'init.php' );
 
@@ -13,7 +9,7 @@ require_once( 'init.php' );
 header('Content-type: application/json; charset=UTF-8');
 
 // Checks that all the required keys are present in the post data
-$keys = array( "update_password", "update_park_id", "update_pi_id", "update_area_id", "update_status" );
+$keys = array( "update_password", "update_lot_id", "update_pi_id", "update_area_id", "update_status" );
 foreach( $keys as $key )
 	if( !array_key_exists( $key, $_POST ) )
 		json_error( 'Incomplete post data.' );
@@ -22,10 +18,10 @@ foreach( $keys as $key )
 if( $_POST[ 'update_password' ] != Conf::PI_PASSWORD )
 	json_error( 'Password incorrect.' );
 
-// Get the space_id from the database using the park, pi and area id's
-$query = "SELECT space_id FROM spaces WHERE space_park_id = ? AND space_pi_id = ? AND space_area_code = ?";
+// Get the space_id from the database using the lot, pi and area id's
+$query = "SELECT space_id FROM spaces WHERE space_lot_id = ? AND space_pi_id = ? AND space_area_code = ?";
 $stmt  = DB::get()->prepare($query);
-$stmt->bindValue( 1, $_POST[ "update_park_id" ], PDO::PARAM_INT );
+$stmt->bindValue( 1, $_POST[ "update_lot_id" ], PDO::PARAM_INT );
 $stmt->bindValue( 2, $_POST[ "update_pi_id" ], PDO::PARAM_INT );
 $stmt->bindValue( 3, $_POST[ "update_area_id" ], PDO::PARAM_INT );
 $stmt->execute();

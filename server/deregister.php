@@ -1,11 +1,7 @@
 <?php
+ 
+// File for deregistering parking spaces from pi's via a HTTP request.
 
-/** 
- * File for deregistering parking spaces from pi's via a HTTP request.
- * 
- * @author	Humphrey Shotton
- * @version	1.0 (2014-01-23)
- */
  
 require_once( 'init.php' );
 

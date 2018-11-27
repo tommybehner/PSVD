@@ -338,9 +338,6 @@ class ControlPoint:
             return None
         
 
-
-# and now for something completely different...
-
 # ==============================================================================
 #
 #   Boxes Class

@@ -18,7 +18,7 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a href="<?php echo Conf::URL_BASE; ?>">
-                        <img src="<?php echo Conf::URL_BASE; ?>assets/logo.png" class="logo" title="<?php echo Conf::TITLE; ?> - Car Parking Sensor" alt="<?php echo Conf::TITLE; ?>">
+                        <img src="<?php echo Conf::URL_BASE; ?>assets/logo.png" class="logo" title="<?php echo Conf::TITLE; ?> - Parking Space Vacancy Detection" alt="<?php echo Conf::TITLE; ?>">
                     </a>
 				</div>
 				<div class="collapse navbar-collapse">
@@ -27,7 +27,7 @@
 							<a href="<?php echo Conf::URL_BASE; ?>">Home</a>
 						</li>
 						<li <?php if(isset($nav_selected) && $nav_selected == 1) echo 'class="active"'; ?>>
-							<a href="<?php echo Conf::URL_BASE; ?>admin/parks.php">Parking Lot Management</a>
+							<a href="<?php echo Conf::URL_BASE; ?>admin/lots.php">Parking Lot Management</a>
 						</li>
 					</ul>
 				</div><!--/.nav-collapse -->

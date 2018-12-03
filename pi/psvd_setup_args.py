@@ -52,7 +52,7 @@ class Application(tk.Frame):
                      s.CAMERA_WINDOW_SIZE[3],
                      s.IMAGE_THRESHOLD,
                      s.IS_VERBOSE,
-                     s.PARK_ID,
+                     s.LOT_ID,
                      s.SERVER_PASS,
                      s.SERVER_URL]
         except:
@@ -68,7 +68,7 @@ class Application(tk.Frame):
                  ['Camera Window H', 'int', 'CAMERA_WINDOW_SIZE[3]'],
                  ['Image Threshold', 'int', 'IMAGE_THRESHOLD'],
                  ['Is Verbose?', 'check', 'IS_VERBOSE'],
-                 ['Park ID', 'int', 'PARK_ID'],
+                 ['Lot ID', 'int', 'LOT_ID'],
                  ['Server Password', 'text', 'SERVER_PASS'],
                  ['Server URL', 'text', 'SERVER_URL']]
 
